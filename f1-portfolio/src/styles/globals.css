@@ -1,0 +1,48 @@
+@import '@fontsource/orbitron/400.css';
+@import '@fontsource/orbitron/700.css';
+@import '@fontsource/orbitron/900.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-f1-black text-f1-white font-orbitron;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Ensure smooth scrolling with fixed background */
+  #root {
+    position: relative;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .speed-line {
+    @apply absolute h-[2px] bg-gradient-to-r from-transparent via-f1-red to-transparent animate-speed-line;
+  }
+
+  .pit-light {
+    @apply w-4 h-4 rounded-full animate-pit-light;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl font-bold uppercase tracking-wider relative;
+  }
+
+  .section-title::before {
+    content: '';
+    @apply absolute -left-8 top-1/2 -translate-y-1/2 w-4 h-4 bg-f1-red;
+  }
+  
+  /* 3D Car Glow Effect */
+  .car-3d-container {
+    filter: drop-shadow(0 0 30px rgba(225, 6, 0, 0.3));
+  }
+}
