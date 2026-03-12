@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import { fadeInUp, staggerContainer } from '../animations/motionVariants';
@@ -6,6 +7,8 @@ import { fadeInUp, staggerContainer } from '../animations/motionVariants';
  * About Section - Driver Profile
  */
 const About = () => {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+
   return (
     <section id="about" className="py-20 bg-f1-black/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,14 +39,21 @@ const About = () => {
                     title="FreakyTravellers Project"
                     className="absolute inset-0 w-full h-full"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                    onLoad={() => setIframeLoaded(true)}
                   />
                   {/* Loading overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-f1-black/90 pointer-events-none">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4 animate-bounce">🏎️</div>
-                      <p className="text-gray-400">Loading FreakyTravellers...</p>
-                    </div>
-                  </div>
+                  {!iframeLoaded && (
+                    <motion.div 
+                      initial={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute inset-0 flex items-center justify-center bg-f1-black pointer-events-none"
+                    >
+                      <div className="text-center">
+                        <div className="text-6xl mb-4 animate-bounce">🏎️</div>
+                        <p className="text-gray-400">Loading FreakyTravellers...</p>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </div>
               
