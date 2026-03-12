@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiMaximize2 } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
-import ProjectModal from '../ui/ProjectModal';
 import { projects } from '../../assets/data/projects';
 import { fadeInUp, staggerContainer } from '../animations/motionVariants';
 import { getPodiumColor } from '../../utils/helpers';
@@ -12,19 +10,6 @@ import { getPodiumColor } from '../../utils/helpers';
  * Projects Section - Grand Prix Races
  */
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openPreview = (project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const closePreview = () => {
-    setIsModalOpen(false);
-    setTimeout(() => setSelectedProject(null), 300);
-  };
-
   return (
     <section id="projects" className="py-20 bg-f1-black/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,22 +60,12 @@ const Projects = () => {
                   </div>
 
                   {/* Project Image */}
-                  <div 
-                    className="aspect-video bg-f1-gray rounded mb-4 overflow-hidden relative group cursor-pointer"
-                    onClick={() => openPreview(project)}
-                  >
+                  <div className="aspect-video bg-f1-gray rounded mb-4 overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    {/* Preview Overlay */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-center">
-                        <FiMaximize2 className="text-4xl text-white mb-2 mx-auto" />
-                        <p className="text-white font-bold">Preview Project</p>
-                      </div>
-                    </div>
                   </div>
 
                   {/* Project Info */}
@@ -112,21 +87,12 @@ const Projects = () => {
                   </div>
 
                   {/* Links */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <Button 
-                      variant="secondary" 
-                      size="sm"
-                      icon={FiMaximize2}
-                      className="w-full"
-                      onClick={() => openPreview(project)}
-                    >
-                      View
-                    </Button>
+                  <div className="flex gap-4">
                     <Button 
                       variant="secondary" 
                       size="sm"
                       icon={FiGithub}
-                      className="w-full"
+                      className="flex-1"
                       as="a"
                       href={project.github}
                       target="_blank"
@@ -138,7 +104,7 @@ const Projects = () => {
                       variant="primary" 
                       size="sm"
                       icon={FiExternalLink}
-                      className="w-full"
+                      className="flex-1"
                       as="a"
                       href={project.live}
                       target="_blank"
@@ -171,13 +137,6 @@ const Projects = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Project Preview Modal */}
-      <ProjectModal 
-        project={selectedProject}
-        isOpen={isModalOpen}
-        onClose={closePreview}
-      />
     </section>
   );
 };

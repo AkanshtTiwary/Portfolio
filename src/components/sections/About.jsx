@@ -24,14 +24,26 @@ const About = () => {
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Profile Image */}
+            {/* Project Preview */}
             <motion.div
               className="relative"
               variants={fadeInUp}
             >
-              <div className="aspect-square bg-gradient-to-br from-f1-black via-f1-gray to-f1-black rounded-lg overflow-hidden border-4 border-f1-red/30">
-                <div className="w-full h-full flex items-center justify-center text-6xl">
-                  🏎️
+              <div className="aspect-square bg-f1-black rounded-lg overflow-hidden border-4 border-f1-red shadow-2xl">
+                <div className="w-full h-full relative">
+                  <iframe
+                    src="https://freaky-travellers.vercel.app"
+                    title="FreakyTravellers Project"
+                    className="absolute inset-0 w-full h-full"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                  />
+                  {/* Loading overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-f1-black/90 pointer-events-none">
+                    <div className="text-center">
+                      <div className="text-6xl mb-4 animate-bounce">🏎️</div>
+                      <p className="text-gray-400">Loading FreakyTravellers...</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
