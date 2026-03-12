@@ -60,12 +60,12 @@ const Hero = () => {
             transition={{ delay: 0.9 }}
           >
             <div className="text-center">
-              <div className="text-4xl font-bold text-f1-red">5+</div>
-              <div className="text-sm text-gray-400">Years Racing</div>
+              <div className="text-4xl font-bold text-f1-red">2+</div>
+              <div className="text-sm text-gray-400">Years Learning</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-f1-red">50+</div>
-              <div className="text-sm text-gray-400">Projects Finished</div>
+              <div className="text-4xl font-bold text-f1-red">10+</div>
+              <div className="text-sm text-gray-400">Projects Built</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-f1-red">100%</div>

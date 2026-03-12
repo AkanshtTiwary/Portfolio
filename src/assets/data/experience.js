@@ -1,47 +1,32 @@
 export const experience = [
   {
     id: 1,
-    team: 'Red Bull Racing',
-    role: 'Lead Developer',
-    period: '2022 - Present',
-    location: 'Remote',
+    team: 'Self-Learning Journey',
+    role: 'Full-Stack Developer',
+    period: '2024 - Present',
+    location: 'Self-Taught',
     achievements: [
-      'Led a team of 5 developers to victory in 12 sprints',
-      'Optimized application performance by 60% (DRS boost)',
-      'Implemented CI/CD pipeline reducing deployment time by 75%',
-      'Achieved 98% code coverage with comprehensive testing'
+      'Built and deployed a complete full-stack travel platform with AI integration',
+      'Mastered MERN stack through hands-on project development',
+      'Implemented payment gateway (Razorpay) and authentication systems',
+      'Learned modern web technologies including Next.js 14 and TypeScript'
     ],
-    tech: ['React', 'Node.js', 'AWS', 'Docker', 'TypeScript'],
-    color: '#0600EF'
+    tech: ['Next.js', 'React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    color: '#E10600'
   },
   {
     id: 2,
-    team: 'Ferrari F1 Team',
-    role: 'Full Stack Developer',
-    period: '2020 - 2022',
-    location: 'Hybrid',
+    team: 'Academic Projects',
+    role: 'Web Development',
+    period: '2023 - 2024',
+    location: 'College',
     achievements: [
-      'Built microservices architecture serving 1M+ users',
-      'Reduced API response time from 800ms to 120ms',
-      'Mentored 3 junior developers to pole position',
-      'Secured 2nd place in annual innovation championship'
+      'Completed multiple web development projects and assignments',
+      'Built responsive websites using HTML, CSS, and JavaScript',
+      'Learned database design and implementation fundamentals',
+      'Collaborated with peers on group projects and presentations'
     ],
-    tech: ['Vue.js', 'Python', 'PostgreSQL', 'Redis', 'Kubernetes'],
-    color: '#DC0000'
-  },
-  {
-    id: 3,
-    team: 'Mercedes-AMG Petronas',
-    role: 'Frontend Developer',
-    period: '2018 - 2020',
-    location: 'On-site',
-    achievements: [
-      'Developed responsive dashboards with 99.9% uptime',
-      'Improved mobile performance score from 65 to 98',
-      'Implemented real-time telemetry features',
-      'Earned fastest lap award for quick feature delivery'
-    ],
-    tech: ['Angular', 'TypeScript', 'RxJS', 'D3.js', 'WebSockets'],
-    color: '#00D2BE'
+    tech: ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub'],
+    color: '#FFD700'
   }
 ];

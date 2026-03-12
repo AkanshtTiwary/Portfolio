@@ -118,13 +118,21 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* View All Projects CTA */}
+          {/* GitHub CTA */}
           <motion.div
             className="text-center mt-12"
             variants={fadeInUp}
           >
-            <Button variant="secondary" size="lg">
-              View All Projects →
+            <p className="text-gray-400 mb-4">More projects coming soon! Check out my GitHub for smaller experiments and contributions.</p>
+            <Button 
+              variant="secondary" 
+              size="lg"
+              as="a"
+              href="https://github.com/AkanshtTiwary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View GitHub Profile →
             </Button>
           </motion.div>
         </motion.div>
