@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
 import { fadeInUp, staggerContainer } from '../animations/motionVariants';
@@ -15,6 +16,11 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: false
+  });
 
   const handleChange = (e) => {
     setFormData({
@@ -23,12 +29,41 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Message sent to the pit wall! 🏁');
-    setFormData({ name: '', email: '', message: '' });
+    setStatus({ loading: true, success: false, error: false });
+
+    try {
+      // EmailJS parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus({ loading: false, success: true, error: false });
+      setFormData({ name: '', email: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setStatus({ loading: false, success: false, error: false });
+      }, 5000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus({ loading: false, success: false, error: true });
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setStatus({ loading: false, success: false, error: false });
+      }, 5000);
+    }
   };
 
   return (
@@ -167,9 +202,31 @@ const Contact = () => {
                     variant="primary"
                     size="lg"
                     className="w-full"
+                    disabled={status.loading}
                   >
-                    Send Message 📡
+                    {status.loading ? 'Sending... 📡' : 'Send Message 📡'}
                   </Button>
+
+                  {/* Status Messages */}
+                  {status.success && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-green-500/20 border border-green-500 rounded text-green-500 text-center"
+                    >
+                      ✅ Message sent successfully! I'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {status.error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-red-500/20 border border-red-500 rounded text-red-500 text-center"
+                    >
+                      ❌ Failed to send message. Please try again or email me directly.
+                    </motion.div>
+                  )}
                 </form>
               </Card>
             </motion.div>
