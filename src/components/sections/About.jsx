@@ -42,24 +42,24 @@ const About = () => {
 
             {/* Content */}
             <motion.div variants={fadeInUp}>
-              <h3 className="text-3xl font-bold mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                 Driving <span className="text-f1-red">Innovation</span> at Top Speed
               </h3>
               
-              <div className="space-y-4 text-gray-300">
-                <p>
+              <div className="space-y-6 text-gray-300">
+                <p className="text-lg leading-relaxed">
                   Just like an F1 driver pushes their car to the limit, I push code to perfection. 
                   With championship-level dedication and pole position skills, I craft digital 
                   experiences that leave the competition in the dust.
                 </p>
                 
-                <p>
+                <p className="text-lg leading-relaxed">
                   Every project is a new Grand Prix—carefully strategized, flawlessly executed, 
                   and optimized for maximum performance. From the formation lap to the checkered flag, 
                   I bring precision engineering to every line of code.
                 </p>
                 
-                <p>
+                <p className="text-lg leading-relaxed">
                   When I'm not racing through sprints, you'll find me fine-tuning my tech stack, 
                   analyzing performance metrics, or mentoring the next generation of developers 
                   in the paddock.

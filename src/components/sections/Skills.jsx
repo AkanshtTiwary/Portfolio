@@ -29,7 +29,7 @@ const Skills = () => {
           </motion.h2>
           
           <motion.p
-            className="text-gray-400 mb-16 max-w-2xl"
+            className="text-gray-300 text-lg mb-16 max-w-2xl leading-relaxed"
             variants={fadeInUp}
           >
             Real-time performance metrics from the garage
@@ -47,7 +47,7 @@ const Skills = () => {
                   {/* Category Header */}
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-4xl">{category.icon}</span>
-                    <h3 className="text-xl font-bold">{category.category}</h3>
+                    <h3 className="text-xl font-bold text-white">{category.category}</h3>
                   </div>
 
                   {/* Skills */}

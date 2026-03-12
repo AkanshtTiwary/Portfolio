@@ -72,14 +72,14 @@ const Experience = () => {
                       />
 
                       {/* Period Badge */}
-                      <div className="inline-block px-4 py-1 bg-f1-red/20 border border-f1-red rounded-full text-sm font-mono mb-4">
+                      <div className="inline-block px-4 py-2 bg-f1-red/20 border border-f1-red rounded-full text-sm font-mono mb-4 font-bold">
                         {exp.period}
                       </div>
 
                       {/* Team & Role */}
-                      <h3 className="text-2xl font-bold mb-2">{exp.team}</h3>
-                      <h4 className="text-lg text-f1-red mb-4">{exp.role}</h4>
-                      <p className="text-sm text-gray-400 mb-6">{exp.location}</p>
+                      <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">{exp.team}</h3>
+                      <p className="text-xl text-f1-red mb-2 font-semibold">{exp.role}</p>
+                      <p className="text-gray-400 mb-6 text-base">{exp.location}</p>
 
                       {/* Achievements */}
                       <div className="space-y-3 mb-6">

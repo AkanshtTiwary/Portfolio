@@ -10,6 +10,8 @@
   body {
     @apply bg-f1-black text-f1-white font-orbitron;
     overflow-x: hidden;
+    line-height: 1.7;
+    font-size: 16px;
   }
   
   html {
@@ -20,6 +22,16 @@
   #root {
     position: relative;
     min-height: 100vh;
+  }
+  
+  /* Better text readability */
+  p {
+    @apply text-gray-300 leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-white;
+    line-height: 1.2;
   }
 }
 
@@ -33,7 +45,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-6xl font-bold uppercase tracking-wider relative;
+    @apply text-4xl md:text-6xl font-bold uppercase tracking-wider relative text-white;
   }
 
   .section-title::before {
@@ -44,5 +56,14 @@
   /* 3D Car Glow Effect */
   .car-3d-container {
     filter: drop-shadow(0 0 30px rgba(225, 6, 0, 0.3));
+  }
+  
+  /* Improved text readability */
+  .text-body {
+    @apply text-gray-300 text-base md:text-lg leading-relaxed;
+  }
+  
+  .text-muted {
+    @apply text-gray-400 leading-relaxed;
   }
 }

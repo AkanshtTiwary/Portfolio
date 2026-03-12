@@ -14,6 +14,12 @@ export default {
           gray: '#38383F',
           silver: '#C0C0C0',
           gold: '#FFD700',
+        },
+        gray: {
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
         }
       },
       fontFamily: {
