@@ -59,9 +59,13 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Project Image Placeholder */}
-                  <div className="aspect-video bg-f1-gray rounded mb-4 flex items-center justify-center text-4xl">
-                    🏁
+                  {/* Project Image */}
+                  <div className="aspect-video bg-f1-gray rounded mb-4 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Project Info */}
