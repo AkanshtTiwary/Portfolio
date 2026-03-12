@@ -10,6 +10,7 @@ const Button = ({
   size = 'md', 
   className = '',
   icon: Icon,
+  as = 'button',
   ...props 
 }) => {
   const baseStyles = 'font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 justify-center';
@@ -26,8 +27,10 @@ const Button = ({
     lg: 'px-8 py-4 text-base',
   };
 
+  const Component = motion[as] || motion.button;
+
   return (
-    <motion.button
+    <Component
       className={clsx(baseStyles, variants[variant], sizes[size], className)}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -35,7 +38,7 @@ const Button = ({
     >
       {Icon && <Icon className="w-5 h-5" />}
       {children}
-    </motion.button>
+    </Component>
   );
 };
 

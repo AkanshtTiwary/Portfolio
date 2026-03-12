@@ -96,6 +96,7 @@ const Projects = () => {
                       as="a"
                       href={project.github}
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Code
                     </Button>
@@ -107,6 +108,7 @@ const Projects = () => {
                       as="a"
                       href={project.live}
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Live
                     </Button>
