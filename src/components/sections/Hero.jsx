@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiArrowDown } from 'react-icons/fi';
 import SpeedLines from '../animations/speedLines';
 import Button from '../ui/Button';
+import { RESUME_FILE_PATH } from '../../utils/constants';
 
 /**
  * Hero Section - Driver Introduction
@@ -92,6 +93,15 @@ const Hero = () => {
             >
               Contact Me
             </button>
+            <a
+              href={RESUME_FILE_PATH}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-transparent text-f1-red border-2 border-f1-red font-bold uppercase tracking-wider hover:bg-f1-red hover:text-white transition-all"
+            >
+              Download Resume
+            </a>
           </motion.div>
         </motion.div>
       </div>

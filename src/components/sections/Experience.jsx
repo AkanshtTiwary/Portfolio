@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Card from '../ui/Card';
 import { experience } from '../../assets/data/experience';
 import { fadeInUp, staggerContainer } from '../animations/motionVariants';
+import { RESUME_FILE_PATH } from '../../utils/constants';
 
 /**
  * Experience Section - Career Laps
@@ -125,9 +126,15 @@ const Experience = () => {
             className="text-center mt-16"
             variants={fadeInUp}
           >
-            <button className="px-8 py-4 bg-f1-red text-white font-bold uppercase tracking-wider hover:bg-red-700 transition-all">
+            <a
+              href={RESUME_FILE_PATH}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-f1-red text-white font-bold uppercase tracking-wider hover:bg-red-700 transition-all"
+            >
               Download Resume / CV 📄
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

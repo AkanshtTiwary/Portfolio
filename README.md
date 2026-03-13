@@ -42,6 +42,11 @@ npm run dev
 npm run build
 ```
 
+## 📄 Add Resume PDF
+
+- Place your resume file at `public/assets/resume.pdf`
+- The "Download Resume / CV" button in the Experience section will automatically serve this file
+
 ## 🎮 3D Features
 
 This portfolio includes stunning 3D animations:

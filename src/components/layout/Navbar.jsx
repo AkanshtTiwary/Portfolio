@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { NAV_ITEMS } from '../../utils/constants';
+import { NAV_ITEMS, RESUME_FILE_PATH } from '../../utils/constants';
 import useScrollProgress from '../../hooks/useScrollProgress';
 
 /**
@@ -70,6 +70,15 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-f1-red group-hover:w-full transition-all duration-300" />
                 </motion.button>
               ))}
+              <a
+                href={RESUME_FILE_PATH}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-f1-red text-white text-xs font-bold uppercase tracking-wider hover:bg-red-700 transition-all"
+              >
+                Resume
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -98,6 +107,15 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
+            <a
+              href={RESUME_FILE_PATH}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left py-3 px-4 bg-f1-red text-white rounded transition-all"
+            >
+              Download Resume
+            </a>
           </div>
         </motion.div>
       </motion.nav>
