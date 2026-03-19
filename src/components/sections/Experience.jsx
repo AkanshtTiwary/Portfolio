@@ -121,20 +121,30 @@ const Experience = () => {
             </div>
           </div>
 
-          {/* Download Resume CTA */}
+          {/* Resume / CV CTA */}
           <motion.div
             className="text-center mt-16"
             variants={fadeInUp}
           >
-            <a
-              href={RESUME_FILE_PATH}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-f1-red text-white font-bold uppercase tracking-wider hover:bg-red-700 transition-all"
-            >
-              Download Resume / CV 📄
-            </a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href={RESUME_FILE_PATH}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-transparent border-2 border-f1-red text-f1-red font-bold uppercase tracking-wider hover:bg-f1-red hover:text-white transition-all"
+              >
+                View CV
+              </a>
+              <a
+                href={RESUME_FILE_PATH}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-f1-red text-white font-bold uppercase tracking-wider hover:bg-red-700 transition-all"
+              >
+                Download CV 📄
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </div>

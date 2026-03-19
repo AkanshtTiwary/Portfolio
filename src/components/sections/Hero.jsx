@@ -95,12 +95,11 @@ const Hero = () => {
             </button>
             <a
               href={RESUME_FILE_PATH}
-              download
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-transparent text-f1-red border-2 border-f1-red font-bold uppercase tracking-wider hover:bg-f1-red hover:text-white transition-all"
             >
-              Download Resume
+              View Resume
             </a>
           </motion.div>
         </motion.div>

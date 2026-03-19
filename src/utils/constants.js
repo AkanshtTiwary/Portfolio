@@ -25,7 +25,7 @@ export const SOCIAL_LINKS = {
   email: 'akanshtiwary2k05@gmail.com',
 };
 
-export const RESUME_FILE_PATH = '/assets/resume.pdf';
+export const RESUME_FILE_PATH = '/resume/resume.pdf';
 
 export const NAV_ITEMS = [
   { name: 'Garage', href: '#hero' },
@@ -33,5 +33,6 @@ export const NAV_ITEMS = [
   { name: 'Telemetry', href: '#skills' },
   { name: 'Grand Prix', href: '#projects' },
   { name: 'Career', href: '#experience' },
+   { name: 'Certifications', href: '#certifications' },
   { name: 'Pit Wall', href: '#contact' },
 ];
