@@ -32,7 +32,7 @@ export const NAV_ITEMS = [
   { name: 'Driver Profile', href: '#about' },
   { name: 'Telemetry', href: '#skills' },
   { name: 'Grand Prix', href: '#projects' },
+  { name: 'Certifications', href: '#certifications' },
   { name: 'Career', href: '#experience' },
-   { name: 'Certifications', href: '#certifications' },
   { name: 'Pit Wall', href: '#contact' },
 ];

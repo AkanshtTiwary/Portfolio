@@ -1,3 +1,7 @@
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+
 @import '@fontsource/orbitron/400.css';
 @import '@fontsource/orbitron/700.css';
 @import '@fontsource/orbitron/900.css';
@@ -8,7 +12,7 @@
 
 @layer base {
   body {
-    @apply bg-f1-black text-f1-white font-orbitron;
+    @apply bg-f1-black text-f1-white font-sans;
     overflow-x: hidden;
     line-height: 1.7;
     font-size: 16px;
@@ -26,11 +30,11 @@
   
   /* Better text readability */
   p {
-    @apply text-gray-300 leading-relaxed;
+    @apply text-gray-300 leading-relaxed font-normal;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-white;
+    @apply font-orbitron font-bold text-white;
     line-height: 1.2;
   }
 }

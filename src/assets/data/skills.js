@@ -48,5 +48,15 @@ export const skills = [
       { name: 'AWS', level: 85, color: '#FF9900' },
       { name: 'CI/CD', level: 87, color: '#2088FF' }
     ]
+  },
+  {
+    category: 'Race Strategy & Communication',
+    icon: '🎙️',
+    items: [
+      { name: 'Communication Skills', level: 95, color: '#E10600' },
+      { name: 'Team Collaboration', level: 92, color: '#FFD700' },
+      { name: 'Client Interaction', level: 88, color: '#00B894' },
+      { name: 'Presentations & Demos', level: 90, color: '#0984E3' }
+    ]
   }
 ];

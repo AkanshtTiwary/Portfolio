@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        racing: ['racing-font', 'sans-serif'],
+      },
       colors: {
         f1: {
           red: '#E10600',
@@ -21,10 +26,6 @@ export default {
           500: '#6B7280',
           600: '#4B5563',
         }
-      },
-      fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
-        racing: ['racing-font', 'sans-serif'],
       },
       animation: {
         'speed-line': 'speedLine 0.5s linear infinite',
