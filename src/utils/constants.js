@@ -28,6 +28,7 @@ export const NAV_ITEMS = [
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Certifications', href: '#certifications' },
+  { name: 'Education', href: '#education' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
