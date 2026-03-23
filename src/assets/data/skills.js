@@ -50,13 +50,13 @@ export const skills = [
     ]
   },
   {
-    category: 'Professional Skills',
-    icon: '🎯',
+    category: 'Soft Skills',
+    icon: '💡',
     items: [
-      { name: 'Problem Solving', level: 95, color: '#E10600' },
-      { name: 'Team Collaboration', level: 92, color: '#FFD700' },
-      { name: 'Client Communication', level: 88, color: '#00B894' },
-      { name: 'Technical Documentation', level: 90, color: '#0984E3' }
+      { name: 'Communication', level: 95, color: '#E10600', proficiency: 'Expert', yearsExp: '3+' },
+      { name: 'Leadership', level: 90, color: '#FFD700', proficiency: 'Advanced', yearsExp: '2+' },
+      { name: 'Team Collaboration', level: 92, color: '#00B894', proficiency: 'Expert', yearsExp: '3+' },
+      { name: 'Problem Solving', level: 95, color: '#0984E3', proficiency: 'Expert', yearsExp: '4+' }
     ]
   }
 ];

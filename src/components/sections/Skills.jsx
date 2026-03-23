@@ -53,12 +53,20 @@ const Skills = () => {
                   {/* Skills */}
                   <div className="space-y-4">
                     {category.items.map((skill) => (
-                      <ProgressBar
-                        key={skill.name}
-                        label={skill.name}
-                        value={skill.level}
-                        color={skill.color}
-                      />
+                      <div key={skill.name}>
+                        <ProgressBar
+                          label={skill.name}
+                          value={skill.level}
+                          color={skill.color}
+                        />
+                        {/* Soft Skills Parameters */}
+                        {skill.proficiency && (
+                          <div className="flex justify-between items-center mt-2 text-xs text-gray-400">
+                            <span>{skill.proficiency}</span>
+                            <span>{skill.yearsExp} experience</span>
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </Card>
