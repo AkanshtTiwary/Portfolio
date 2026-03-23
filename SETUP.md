@@ -1,11 +1,11 @@
-# F1 Portfolio - Setup Complete! 🏎️
+# Developer Portfolio - Setup Complete! 🚀
 
-This F1-themed portfolio project has been successfully created with all the required dependencies and structure.
+This professional developer portfolio project has been successfully created with all the required dependencies and structure.
 
 ## 📁 Project Structure
 
 ```
-f1-portfolio/
+developer-portfolio/
 ├── public/
 │   ├── fonts/
 │   ├── icons/
@@ -38,7 +38,7 @@ f1-portfolio/
 
 1. Navigate to the project directory:
    ```bash
-   cd f1-portfolio
+   cd developer-portfolio
    ```
 
 2. Install dependencies:
@@ -69,4 +69,4 @@ f1-portfolio/
 - ✅ @fontsource/orbitron
 - ✅ Tailwind CSS + PostCSS
 
-Lights out and away we go! 🏁
+Ready to showcase your professional portfolio! 🎉

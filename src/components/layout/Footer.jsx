@@ -3,7 +3,7 @@ import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { SOCIAL_LINKS } from '../../utils/constants';
 
 /**
- * F1-themed footer with social links
+ * Professional Footer with social links
  */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,15 +22,15 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-12 h-12 bg-f1-red flex items-center justify-center font-bold text-2xl">
-                F1
+                🎯
               </div>
               <div>
-                <div className="font-bold text-lg">F1 PORTFOLIO</div>
-                <div className="text-xs text-gray-400">Full Throttle Developer</div>
+                <div className="font-bold text-lg">Portfolio</div>
+                <div className="text-xs text-gray-400">Full-Stack Developer</div>
               </div>
             </div>
             <p className="text-sm text-gray-400">
-              Racing through code at championship speeds.
+              Building innovative web solutions with cutting-edge technologies.
             </p>
           </div>
 
@@ -38,10 +38,10 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4 text-f1-red">QUICK LINKS</h3>
             <div className="space-y-2 text-sm text-gray-400">
-              <a href="#about" className="block hover:text-white transition-colors">Driver Profile</a>
-              <a href="#skills" className="block hover:text-white transition-colors">Telemetry</a>
-              <a href="#projects" className="block hover:text-white transition-colors">Grand Prix</a>
-              <a href="#contact" className="block hover:text-white transition-colors">Pit Wall</a>
+              <a href="#about" className="block hover:text-white transition-colors">About</a>
+              <a href="#skills" className="block hover:text-white transition-colors">Skills</a>
+              <a href="#projects" className="block hover:text-white transition-colors">Projects</a>
+              <a href="#contact" className="block hover:text-white transition-colors">Contact</a>
             </div>
           </div>
 
@@ -70,7 +70,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-f1-silver/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-400">
-            © {currentYear} F1 Portfolio. All rights reserved.
+            © {currentYear} Akansh Tiwary. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-gray-400">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

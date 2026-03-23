@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 /**
- * Speed lines animation for racing effect
+ * Animated speed lines effect for dynamic visual appeal
  */
 const SpeedLines = ({ count = 5, className = '' }) => {
   return (

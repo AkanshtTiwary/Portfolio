@@ -50,9 +50,9 @@ function App() {
     <>
       {isLoading && <Loader />}
       
-      {/* Fixed Ferrari F1 Background */}
+      {/* Professional Background */}
       <div className="fixed inset-0 z-0 overflow-hidden">
-        {/* Real Ferrari F1 Image */}
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{

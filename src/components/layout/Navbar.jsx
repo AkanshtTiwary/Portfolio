@@ -5,7 +5,7 @@ import { NAV_ITEMS, RESUME_FILE_PATH } from '../../utils/constants';
 import useScrollProgress from '../../hooks/useScrollProgress';
 
 /**
- * F1-themed navigation bar with race progress indicator
+ * Professional Navigation Bar with scroll progress indicator
  */
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,10 +49,10 @@ const Navbar = () => {
               className="flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-10 h-10 bg-f1-red flex items-center justify-center font-bold text-2xl">
-                F1
+              <div className="w-10 h-10 bg-f1-red flex items-center justify-center font-bold text-xl">
+                 🎯
               </div>
-              <span className="font-bold text-xl hidden sm:block">PORTFOLIO</span>
+              <span className="font-bold text-lg hidden sm:block">Portfolio</span>
             </motion.div>
 
             {/* Desktop Navigation */}

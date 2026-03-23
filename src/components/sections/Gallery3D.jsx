@@ -9,9 +9,6 @@ import Card from '../ui/Card';
  */
 const Gallery3D = () => {
   const [activeModel, setActiveModel] = useState('car');
-
-  return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-f1-black to-f1-gray relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 telemetry-grid opacity-5" />
 
@@ -27,14 +24,14 @@ const Gallery3D = () => {
             className="section-title mb-4"
             variants={fadeInUp}
           >
-            3D GARAGE
+            3D SHOWCASE
           </motion.h2>
           
           <motion.p
             className="text-gray-400 mb-8 max-w-2xl"
             variants={fadeInUp}
           >
-            Explore the racing technology in 3D - Drag to rotate, scroll to zoom
+            Interactive 3D visualization - Drag to rotate, scroll to zoom
           </motion.p>
 
           {/* Model Selector */}
@@ -50,7 +47,7 @@ const Gallery3D = () => {
                   : 'bg-f1-gray text-gray-400 hover:bg-f1-gray/70'
               }`}
             >
-              🏎️ F1 Car
+              Vehicle Model
             </button>
             <button
               onClick={() => setActiveModel('driver')}
@@ -60,7 +57,7 @@ const Gallery3D = () => {
                   : 'bg-f1-gray text-gray-400 hover:bg-f1-gray/70'
               }`}
             >
-              👨‍🚀 Driver Capsule
+              Helmet & Suit
             </button>
           </motion.div>
 

@@ -25,14 +25,14 @@ const Experience = () => {
             className="section-title mb-4"
             variants={fadeInUp}
           >
-            CAREER TIMELINE
+            PROFESSIONAL EXPERIENCE
           </motion.h2>
           
           <motion.p
             className="text-gray-400 mb-16 max-w-2xl"
             variants={fadeInUp}
           >
-            Racing through the seasons with championship teams
+            Professional growth and achievements in web development
           </motion.p>
 
           {/* Timeline */}

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 /**
- * Animated counter for telemetry stats
+ * Animated counter for statistics and metrics
  */
 const useCountUp = (end, duration = 2000, start = 0) => {
   const [count, setCount] = useState(start);

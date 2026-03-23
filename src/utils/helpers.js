@@ -1,15 +1,4 @@
 /**
- * Format lap time from seconds to F1 format (M:SS.mmm)
- */
-export const formatLapTime = (seconds) => {
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  const milliseconds = Math.floor((seconds % 1) * 1000);
-  
-  return `${minutes}:${secs.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
-};
-
-/**
  * Calculate percentage with precision
  */
 export const calculatePercentage = (value, total) => {
@@ -46,7 +35,7 @@ export const throttle = (func, limit) => {
 };
 
 /**
- * Get pit stop color based on position
+ * Get accent color based on ranking
  */
 export const getPodiumColor = (position) => {
   const colors = {
@@ -55,14 +44,6 @@ export const getPodiumColor = (position) => {
     3: '#CD7F32', // Bronze
   };
   return colors[position] || '#38383F';
-};
-
-/**
- * Generate random lap time variance
- */
-export const generateLapTimeVariance = (baseTime) => {
-  const variance = (Math.random() - 0.5) * 0.5; // ±0.25 seconds
-  return baseTime + variance;
 };
 
 /**

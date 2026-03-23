@@ -61,7 +61,7 @@ const Certifications = () => {
             className="text-gray-400 mb-16 max-w-2xl"
             variants={fadeInUp}
           >
-            Official race trophies recognizing skills and achievements
+            Professional certifications and credentials demonstrating expertise
           </motion.p>
 
           {/* Certifications Grid */}

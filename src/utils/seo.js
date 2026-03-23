@@ -2,9 +2,9 @@
  * SEO metadata configuration
  */
 export const seoConfig = {
-  title: 'Akansh Tiwary | F1 Portfolio',
-  description: 'An F1-inspired portfolio showcasing projects, skills, and experience with racing aesthetics and smooth animations.',
-  keywords: 'developer, portfolio, F1, racing, React, web development, full stack, Akansh Tiwary',
+  title: 'Akansh Tiwary | Full-Stack Developer Portfolio',
+  description: 'Full-stack developer portfolio showcasing projects, technical skills, and professional experience with modern web technologies.',
+  keywords: 'developer, portfolio, React, web development, full stack, Node.js, JavaScript, Akansh Tiwary',
   author: 'Akansh Tiwary',
   siteUrl: 'https://akanshtiwary.com',
   image: '/og-image.png',

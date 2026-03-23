@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 /**
- * F1-themed button component
+ * Professional Button Component
  */
 const Button = ({ 
   children, 

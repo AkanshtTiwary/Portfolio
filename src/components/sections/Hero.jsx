@@ -30,7 +30,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            POLE POSITION DEVELOPER
+            INNOVATIVE FULL-STACK DEVELOPER
           </motion.div>
 
           {/* Main Title */}
@@ -50,7 +50,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            Full-Stack Developer • Racing at <span className="text-f1-red font-bold">350+ commits/hour</span>
+            Full-Stack Web Developer • Building High-Performance Solutions
           </motion.p>
 
           {/* Stats */}
@@ -99,7 +99,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-transparent text-f1-red border-2 border-f1-red font-bold uppercase tracking-wider hover:bg-f1-red hover:text-white transition-all"
             >
-              View Resume
+              Download Resume
             </a>
           </motion.div>
         </motion.div>

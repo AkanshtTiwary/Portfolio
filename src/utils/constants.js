@@ -7,16 +7,11 @@ export const COLORS = {
   trophyGold: '#FFD700',
 };
 
-export const RACE_TRACKS = [
-  'Monaco', 'Silverstone', 'Spa', 'Monza', 'Suzuka',
-  'COTA', 'Interlagos', 'Singapore', 'Abu Dhabi'
-];
-
 export const ANIMATION_DURATION = {
   fast: 0.3,
   medium: 0.6,
   slow: 1.2,
-  pitStop: 2.5,
+  standard: 2.5,
 };
 
 export const SOCIAL_LINKS = {
@@ -28,11 +23,11 @@ export const SOCIAL_LINKS = {
 export const RESUME_FILE_PATH = '/resume/resume.pdf';
 
 export const NAV_ITEMS = [
-  { name: 'Garage', href: '#hero' },
-  { name: 'Driver Profile', href: '#about' },
-  { name: 'Telemetry', href: '#skills' },
-  { name: 'Grand Prix', href: '#projects' },
+  { name: 'Home', href: '#hero' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Certifications', href: '#certifications' },
-  { name: 'Career', href: '#experience' },
-  { name: 'Pit Wall', href: '#contact' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
 ];

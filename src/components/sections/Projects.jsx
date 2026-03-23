@@ -7,7 +7,7 @@ import { fadeInUp, staggerContainer } from '../animations/motionVariants';
 import { getPodiumColor } from '../../utils/helpers';
 
 /**
- * Projects Section - Grand Prix Races
+ * Projects Section - Featured Projects Showcase
  */
 const Projects = () => {
   return (
@@ -24,14 +24,14 @@ const Projects = () => {
             className="section-title mb-4"
             variants={fadeInUp}
           >
-            GRAND PRIX SHOWCASE
+            FEATURED PROJECTS
           </motion.h2>
           
           <motion.p
             className="text-gray-400 mb-16 max-w-2xl"
             variants={fadeInUp}
           >
-            Championship-winning projects crossing the finish line
+            Innovative full-stack applications showcasing modern development practices
           </motion.p>
 
           {/* Projects Grid */}
@@ -43,7 +43,7 @@ const Projects = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full flex flex-col">
-                  {/* Podium Position Badge */}
+                  {/* Project Status Badge */}
                   <div className="flex justify-between items-start mb-4">
                     <div 
                       className="px-3 py-1 rounded font-bold text-sm"
@@ -52,10 +52,7 @@ const Projects = () => {
                         color: '#000'
                       }}
                     >
-                      P{project.position}
-                    </div>
-                    <div className="text-sm text-f1-red font-mono">
-                      {project.lapTime}
+                      #{project.position}
                     </div>
                   </div>
 

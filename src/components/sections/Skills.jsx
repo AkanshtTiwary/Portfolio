@@ -5,7 +5,7 @@ import { skills } from '../../assets/data/skills';
 import { fadeInUp, staggerContainer } from '../animations/motionVariants';
 
 /**
- * Skills Section - Telemetry Dashboard
+ * Skills Section - Technical Skills Dashboard
  */
 const Skills = () => {
   return (
@@ -25,14 +25,14 @@ const Skills = () => {
             className="section-title mb-4"
             variants={fadeInUp}
           >
-            TELEMETRY DASHBOARD
+            TECHNICAL SKILLS
           </motion.h2>
           
           <motion.p
             className="text-gray-300 text-lg mb-16 max-w-2xl leading-relaxed"
             variants={fadeInUp}
           >
-            Real-time performance metrics from the garage
+            Core competencies and technical expertise across modern web technologies
           </motion.p>
 
           {/* Skills Grid */}
@@ -73,19 +73,19 @@ const Skills = () => {
           >
             <div className="text-center">
               <div className="text-4xl font-bold text-f1-red mb-2">15+</div>
-              <div className="text-sm text-gray-400">Technologies Mastered</div>
+              <div className="text-sm text-gray-400">Core Technologies</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-f1-red mb-2">350+</div>
-              <div className="text-sm text-gray-400">Hours Logged</div>
+              <div className="text-4xl font-bold text-f1-red mb-2">500+</div>
+              <div className="text-sm text-gray-400">Hours of Development</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-f1-red mb-2">99%</div>
-              <div className="text-sm text-gray-400">Code Quality</div>
+              <div className="text-4xl font-bold text-f1-red mb-2">100%</div>
+              <div className="text-sm text-gray-400">Commitment to Quality</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-f1-red mb-2">24/7</div>
-              <div className="text-sm text-gray-400">Learning Mode</div>
+              <div className="text-4xl font-bold text-f1-red mb-2">♾️</div>
+              <div className="text-sm text-gray-400">Continuous Learning</div>
             </div>
           </motion.div>
         </motion.div>

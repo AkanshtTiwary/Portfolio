@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 /**
- * F1-themed card component with hover effects
+ * Professional Card Component with modern styling
  */
 const Card = ({ 
   children, 

@@ -4,7 +4,7 @@ import { MeshDistortMaterial, Float, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
 
 /**
- * 3D F1 Car - Rotating and floating with enhanced visibility
+ * 3D Vehicle Model - Rotating and floating with enhanced visibility
  */
 function F1Car3D() {
   const carRef = useRef();

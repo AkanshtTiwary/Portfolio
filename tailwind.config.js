@@ -9,7 +9,6 @@ export default {
       fontFamily: {
         sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         orbitron: ['Orbitron', 'sans-serif'],
-        racing: ['racing-font', 'sans-serif'],
       },
       colors: {
         f1: {

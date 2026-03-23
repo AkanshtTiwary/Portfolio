@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { MeshDistortMaterial } from '@react-three/drei';
 
 /**
- * 3D Driver Capsule - Driver emerging animation
+ * 3D Professional Display - Interactive helmet and suit visualization
  */
 function DriverCapsule3D() {
   const capsuleTopRef = useRef();

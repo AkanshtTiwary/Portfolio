@@ -1,16 +1,17 @@
-# 🏎️ F1 Portfolio
+# 🚀 Developer Portfolio
 
-An F1-themed developer portfolio with racing-inspired animations and **3D interactive models**.
+A professional developer portfolio with modern, high-performance visual design and interactive 3D elements.
 
-## 🚀 Features
+## ✨ Features
 
-- F1-inspired design with racing aesthetics
-- **🎮 3D Interactive Models** (Rotating F1 car, Driver capsule)
+- Professional portfolio layout with modern design principles
+- 🎮 3D Interactive Models (Vehicle showcase, professional styling)
 - Smooth animations with Framer Motion
 - Smooth scrolling with Lenis
-- Telemetry-style skill dashboard
-- Grand Prix project showcase
-- Racing career timeline
+- Technical skills dashboard
+- Project showcase section
+- Professional timeline and experience
+- Contact form
 
 ## 🛠️ Tech Stack
 
@@ -30,7 +31,7 @@ An F1-themed developer portfolio with racing-inspired animations and **3D intera
 npm install
 ```
 
-## 🏁 Development
+## 🚀 Development
 
 ```bash
 npm run dev
@@ -45,31 +46,31 @@ npm run build
 ## 📄 Add Resume PDF
 
 - Place your resume file at `public/assets/resume.pdf`
-- The "Download Resume / CV" button in the Experience section will automatically serve this file
+- The "Download Resume" button in the Experience section will automatically serve this file
 
 ## 🎮 3D Features
 
-This portfolio includes stunning 3D animations:
+This portfolio includes stunning 3D visualizations:
 
 ### Interactive 3D Models
-- **Rotating F1 Car** - Auto-rotating race car in the Hero section
-- **Driver Capsule** - Animated driver emerging from pod in About section
+- **Vehicle Showcase** - Rotating professional model in Hero section
+- **Professional Styling** - Animated professional look in gallery section
 - **3D Gallery** - Dedicated section with full interactive controls
 
 ### Controls
 - **Drag** to rotate models
 - **Scroll** to zoom in/out
-- **Auto-rotate** for cinematic effect
+- **Auto-rotate** for professional presentation
 
 See [3D_FEATURES.md](3D_FEATURES.md) for detailed documentation.
 
-## 🎨 Theme
+## 🎨 Professional Color Scheme
 
-The portfolio uses F1 racing colors:
-- Red: #E10600 (Ferrari Red)
-- Black: #15151E (Carbon Black)
-- Silver: #C0C0C0 (Mercedes Silver)
-- Gold: #FFD700 (Championship Gold)
+The portfolio uses a professional red accent color scheme:
+- Red: #E10600 (Primary accent)
+- Black: #15151E (Dark background)
+- Silver: #C0C0C0 (Secondary accent)
+- Gold: #FFD700 (Highlight)
 
 ## 📁 Structure
 

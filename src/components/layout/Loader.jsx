@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /**
- * F1 Race Start Loader Animation 🚦
+ * Application Loading Animation
  */
 const Loader = () => {
   const [lightsOn, setLightsOn] = useState(0);
@@ -59,9 +59,9 @@ const Loader = () => {
             transition={{ delay: 0.3 }}
           >
             {lightsOn === 0 && isComplete ? (
-              <span className="text-green-500">LIGHTS OUT AND AWAY WE GO! 🏁</span>
+              <span className="text-green-500">READY TO START! 🏁</span>
             ) : (
-              <span>GET READY...</span>
+              <span>INITIALIZING...</span>
             )}
           </motion.div>
 

@@ -1,6 +1,6 @@
 export const skills = [
   {
-    category: 'Power Unit',
+    category: 'Programming Languages',
     icon: '⚡',
     items: [
       { name: 'JavaScript', level: 95, color: '#F7DF1E' },
@@ -10,8 +10,8 @@ export const skills = [
     ]
   },
   {
-    category: 'Aerodynamics',
-    icon: '🏎️',
+    category: 'Frontend Frameworks',
+    icon: '🎨',
     items: [
       { name: 'React', level: 95, color: '#61DAFB' },
       { name: 'Next.js', level: 90, color: '#000000' },
@@ -20,7 +20,7 @@ export const skills = [
     ]
   },
   {
-    category: 'Chassis',
+    category: 'Backend Development',
     icon: '🔧',
     items: [
       { name: 'Node.js', level: 90, color: '#339933' },
@@ -30,7 +30,7 @@ export const skills = [
     ]
   },
   {
-    category: 'Telemetry',
+    category: 'Databases',
     icon: '📊',
     items: [
       { name: 'MongoDB', level: 88, color: '#47A248' },
@@ -40,23 +40,23 @@ export const skills = [
     ]
   },
   {
-    category: 'Pit Crew Tools',
+    category: 'Developer Tools',
     icon: '🛠️',
     items: [
       { name: 'Git', level: 92, color: '#F05032' },
       { name: 'Docker', level: 88, color: '#2496ED' },
       { name: 'AWS', level: 85, color: '#FF9900' },
-      { name: 'CI/CD', level: 87, color: '#2088FF' }
+      { name: 'CI/CD Pipelines', level: 87, color: '#2088FF' }
     ]
   },
   {
-    category: 'Race Strategy & Communication',
-    icon: '🎙️',
+    category: 'Professional Skills',
+    icon: '🎯',
     items: [
-      { name: 'Communication Skills', level: 95, color: '#E10600' },
+      { name: 'Problem Solving', level: 95, color: '#E10600' },
       { name: 'Team Collaboration', level: 92, color: '#FFD700' },
-      { name: 'Client Interaction', level: 88, color: '#00B894' },
-      { name: 'Presentations & Demos', level: 90, color: '#0984E3' }
+      { name: 'Client Communication', level: 88, color: '#00B894' },
+      { name: 'Technical Documentation', level: 90, color: '#0984E3' }
     ]
   }
 ];

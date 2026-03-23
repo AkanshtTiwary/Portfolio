@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer } from '../animations/motionVariants';
 import { SOCIAL_LINKS } from '../../utils/constants';
 
 /**
- * Contact Section - Pit Wall Communication
+ * Contact Section - Get In Touch
  */
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -91,14 +91,14 @@ const Contact = () => {
             className="section-title mb-4"
             variants={fadeInUp}
           >
-            PIT WALL RADIO
+            GET IN TOUCH
           </motion.h2>
           
           <motion.p
             className="text-gray-300 text-lg mb-16 max-w-2xl leading-relaxed"
             variants={fadeInUp}
           >
-            Box box! Let's discuss your next project
+            Let's collaborate on your next project. I'd love to hear from you.
           </motion.p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -111,7 +111,7 @@ const Contact = () => {
                       <FiMail className="text-f1-red text-xl" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400 font-medium mb-1">Email</div>
+                      <div className="text-sm text-gray-400 font-medium mb-1">Email Address</div>
                       <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-gray-300 hover:text-f1-red transition-colors text-base">
                         {SOCIAL_LINKS.email}
                       </a>
@@ -125,7 +125,7 @@ const Contact = () => {
                       <FiMapPin className="text-f1-red text-xl" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400 font-medium mb-1">Location</div>
+                      <div className="text-sm text-gray-400 font-medium mb-1">Work Arrangement</div>
                       <div className="text-gray-300 text-base">Remote / Global</div>
                     </div>
                   </div>
@@ -144,15 +144,15 @@ const Contact = () => {
                 </Card>
               </div>
 
-              {/* Fun Racing Quote */}
+              {/* Professional Insights */}
               <motion.div
                 className="mt-8 p-6 border-l-4 border-f1-red bg-f1-gray/30"
                 whileHover={{ x: 10 }}
               >
                 <p className="text-lg italic mb-2 text-gray-300 leading-relaxed">
-                  "If everything seems under control, you're not going fast enough."
+                  "Excellence is not a destination; it's a continuous journey of learning, innovation, and growth."
                 </p>
-                <p className="text-sm text-gray-400">- Mario Andretti</p>
+                <p className="text-sm text-gray-400">- Professional Development Philosophy</p>
               </motion.div>
             </motion.div>
 
@@ -162,7 +162,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-semibold mb-2 text-gray-300">
-                      Driver Name
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -177,7 +177,7 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-semibold mb-2 text-gray-300">
-                      Radio Frequency (Email)
+                      Your Email
                     </label>
                     <input
                       type="email"
@@ -192,7 +192,7 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-semibold mb-2 text-gray-300">
-                      Strategy Briefing
+                      Project Details
                     </label>
                     <textarea
                       name="message"
@@ -212,7 +212,7 @@ const Contact = () => {
                     className="w-full"
                     disabled={status.loading}
                   >
-                    {status.loading ? 'Sending... 📡' : 'Send Message 📡'}
+                    {status.loading ? 'Sending...' : 'Send Message'}
                   </Button>
 
                   {/* Status Messages */}
