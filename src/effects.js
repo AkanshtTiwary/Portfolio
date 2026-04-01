@@ -135,53 +135,21 @@ function initCursorSystem() {
 }
 
 // ============================================================================
-// 2. MAGNETIC HEADING EFFECT
+// 2. MAGNETIC HEADING EFFECT (Apply to all headings)
 // ============================================================================
 function initMagneticHeading() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing magnetic heading...');
+  console.log('Initializing magnetic heading on all headings...');
 
-  // Find the h1 in hero section (targets the motion.h1)
-  const heading = document.querySelector('#hero h1');
-  if (!heading) {
-    console.warn('Heading not found in #hero h1');
+  // Find ALL headings throughout the page (but skip navbar, footer, etc.)
+  const headings = document.querySelectorAll('main h1, main h2, main h3, main h4, main h5, main h6');
+  console.log(`Found ${headings.length} headings to enhance`);
+
+  if (headings.length === 0) {
+    console.warn('No headings found in main content');
     return;
   }
-
-  console.log('Heading found:', heading.textContent);
-
-  // Get plain text and split into characters
-  const text = heading.textContent;
-  const chars = text.match(/./gu) || [];
-  const redPart = 'TIWARY';
-  const redStartIndex = text.indexOf(redPart);
-  const redEndIndex = redStartIndex + redPart.length;
-
-  // Build character spans, applying red class where needed
-  const charSpans = chars.map((char, i) => {
-    const shouldBeRed = i >= redStartIndex && i < redEndIndex;
-    const classes = `char${shouldBeRed ? ' text-f1-red' : ''}`;
-    return `<span class="${classes}" data-index="${i}">${char}</span>`;
-  }).join('');
-
-  heading.innerHTML = charSpans;
-
-  const charElements = heading.querySelectorAll('.char');
-  console.log(`Split heading into ${charElements.length} characters`);
-
-  const charPositions = [];
-
-  // Store original positions
-  charElements.forEach((char) => {
-    const rect = char.getBoundingClientRect();
-    charPositions.push({
-      originalX: rect.left,
-      originalY: rect.top,
-      originalWidth: rect.width,
-      originalHeight: rect.height,
-    });
-  });
 
   let mouseX = 0;
   let mouseY = 0;
@@ -189,85 +157,93 @@ function initMagneticHeading() {
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+  });
 
-    charElements.forEach((char, index) => {
-      const rect = char.getBoundingClientRect();
-      const charCenterX = rect.left + rect.width / 2;
-      const charCenterY = rect.top + rect.height / 2;
+  // Process each heading
+  headings.forEach((heading, headingIdx) => {
+    // Skip if already processed
+    if (heading.querySelector('.char')) {
+      return;
+    }
 
-      const dx = mouseX - charCenterX;
-      const dy = mouseY - charCenterY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+    const text = heading.textContent;
+    const chars = text.match(/./gu) || [];
 
-      const radius = 120; // Interaction radius in px
-      const maxDisplacement = 35; // Max push-away distance
-      const maxRotation = 12; // Max rotation in degrees
+    // Build character spans
+    const charSpans = chars.map((char, i) => {
+      return `<span class="char" data-index="${i}">${char}</span>`;
+    }).join('');
 
-      if (distance < radius) {
-        const force = 1 - distance / radius; // 0 to 1
-        const angle = Math.atan2(dy, dx);
+    heading.innerHTML = charSpans;
+    const charElements = heading.querySelectorAll('.char');
 
-        // Repel away from cursor
-        const dispX = Math.cos(angle) * force * maxDisplacement;
-        const dispY = Math.sin(angle) * force * maxDisplacement;
+    console.log(`Heading ${headingIdx + 1}: Split into ${charElements.length} characters`);
 
-        // Color shift toward accent (red) on proximity
-        const hue = force * 0; // Red hue
-        const saturation = 100 + force * 20;
-        const lightness = 50 + force * 10;
+    // Add mousemove listener for this specific heading
+    document.addEventListener('mousemove', () => {
+      charElements.forEach((char, index) => {
+        const rect = char.getBoundingClientRect();
+        const charCenterX = rect.left + rect.width / 2;
+        const charCenterY = rect.top + rect.height / 2;
 
-        char.style.transform = `translate(${dispX}px, ${dispY}px) rotate(${(angle * 180) / Math.PI * (force * maxRotation / 45)}deg)`;
-        char.style.color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-      } else {
+        const dx = mouseX - charCenterX;
+        const dy = mouseY - charCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const radius = 120; // Interaction radius in px
+        const maxDisplacement = 35; // Max push-away distance
+        const maxRotation = 12; // Max rotation in degrees
+
+        if (distance < radius) {
+          const force = 1 - distance / radius; // 0 to 1
+          const angle = Math.atan2(dy, dx);
+
+          // Repel away from cursor
+          const dispX = Math.cos(angle) * force * maxDisplacement;
+          const dispY = Math.sin(angle) * force * maxDisplacement;
+
+          char.style.transform = `translate(${dispX}px, ${dispY}px) rotate(${(angle * 180) / Math.PI * (force * maxRotation / 45)}deg)`;
+          char.style.color = `hsl(0, 100%, 50%)`; // Red when close
+        } else {
+          char.style.transform = 'translate(0, 0) rotate(0deg)';
+          char.style.color = ''; // Reset to inherited
+        }
+      });
+    });
+
+    // Spring back on mouse leave
+    document.addEventListener('mouseleave', () => {
+      charElements.forEach((char) => {
+        char.style.transition = 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
         char.style.transform = 'translate(0, 0) rotate(0deg)';
-        char.style.color = ''; // Reset to inherited
-      }
+        char.style.color = '';
+
+        setTimeout(() => {
+          char.style.transition = '';
+        }, 500);
+      });
     });
   });
 
-  // Spring back on mouse leave
-  document.addEventListener('mouseleave', () => {
-    charElements.forEach((char) => {
-      char.style.transition = 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
-      char.style.transform = 'translate(0, 0) rotate(0deg)';
-      char.style.color = '';
-
-      setTimeout(() => {
-        char.style.transition = '';
-      }, 500);
-    });
-  });
-
-  console.log('Magnetic heading initialized');
+  console.log('Magnetic heading initialized on all headings');
 }
 
 // ============================================================================
-// 3. WAVE EFFECT ON SUBTITLE
+// 3. WAVE EFFECT ON ALL PARAGRAPHS
 // ============================================================================
 function initWaveSubtitle() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing wave subtitle...');
+  console.log('Initializing wave effect on all paragraphs...');
 
-  // Find the subtitle/paragraph in hero section
-  const subtitle = document.querySelector('#hero p');
-  if (!subtitle) {
-    console.warn('Subtitle not found in #hero p');
+  // Find ALL paragraphs in main content
+  const paragraphs = document.querySelectorAll('main p');
+  console.log(`Found ${paragraphs.length} paragraphs to enhance`);
+
+  if (paragraphs.length === 0) {
+    console.warn('No paragraphs found in main content');
     return;
   }
-
-  console.log('Subtitle found:', subtitle.textContent);
-
-  // Split text into character spans
-  const text = subtitle.textContent;
-  const chars = text.match(/./gu) || [];
-
-  subtitle.innerHTML = chars
-    .map((char, i) => `<span class="char" data-index="${i}">${char}</span>`)
-    .join('');
-
-  const charElements = subtitle.querySelectorAll('.char');
-  console.log(`Split subtitle into ${charElements.length} characters`);
 
   let mouseX = 0;
   let mouseY = 0;
@@ -283,56 +259,75 @@ function initWaveSubtitle() {
     mouseY = e.clientY;
   });
 
-  function updateWave() {
-    charElements.forEach((char, index) => {
-      const rect = char.getBoundingClientRect();
-      const charCenterX = rect.left + rect.width / 2;
-      const charCenterY = rect.top + rect.height / 2;
+  // Process each paragraph
+  paragraphs.forEach((para, paraIdx) => {
+    // Skip if already processed
+    if (para.querySelector('.char')) {
+      return;
+    }
 
-      const dx = mouseX - charCenterX;
-      const dy = mouseY - charCenterY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
+    const text = para.textContent;
+    const chars = text.match(/./gu) || [];
 
-      const radius = 80; // Wave interaction radius
-      const maxPush = 14; // Max upward displacement
+    para.innerHTML = chars
+      .map((char, i) => `<span class="char" data-index="${i}">${char}</span>`)
+      .join('');
 
-      if (distance < radius) {
-        const force = 1 - distance / radius;
-        // Sine wave based on time + character index
-        const wave = Math.sin(time + index * 0.2) * force * maxPush;
+    const charElements = para.querySelectorAll('.char');
+    console.log(`Paragraph ${paraIdx + 1}: Split into ${charElements.length} characters`);
 
-        char.style.transform = `translate(0, ${-wave}px)`;
-      } else {
+    function updateWave() {
+      charElements.forEach((char, index) => {
+        const rect = char.getBoundingClientRect();
+        const charCenterX = rect.left + rect.width / 2;
+        const charCenterY = rect.top + rect.height / 2;
+
+        const dx = mouseX - charCenterX;
+        const dy = mouseY - charCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const radius = 80; // Wave interaction radius
+        const maxPush = 14; // Max upward displacement
+
+        if (distance < radius) {
+          const force = 1 - distance / radius;
+          // Sine wave based on time + character index
+          const wave = Math.sin(time + index * 0.2) * force * maxPush;
+
+          char.style.transform = `translate(0, ${-wave}px)`;
+        } else {
+          char.style.transform = 'translate(0, 0)';
+        }
+      });
+
+      requestAnimationFrame(updateWave);
+    }
+
+    // Smooth return on mouse leave
+    document.addEventListener('mouseleave', () => {
+      charElements.forEach((char) => {
+        char.style.transition = 'transform 0.4s ease-out';
         char.style.transform = 'translate(0, 0)';
-      }
+
+        setTimeout(() => {
+          char.style.transition = '';
+        }, 400);
+      });
     });
 
-    requestAnimationFrame(updateWave);
-  }
-
-  // Smooth return on mouse leave
-  document.addEventListener('mouseleave', () => {
-    charElements.forEach((char) => {
-      char.style.transition = 'transform 0.4s ease-out';
-      char.style.transform = 'translate(0, 0)';
-
-      setTimeout(() => {
-        char.style.transition = '';
-      }, 400);
-    });
+    updateWave();
   });
 
-  updateWave();
-  console.log('Wave subtitle initialized');
+  console.log('Wave effect initialized on all paragraphs');
 }
 
 // ============================================================================
-// 4. MAGNETIC BUTTONS (requires GSAP)
+// 4. MAGNETIC BUTTONS (requires GSAP) - Apply to all buttons
 // ============================================================================
 function initMagneticButtons() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing magnetic buttons...');
+  console.log('Initializing magnetic buttons on all buttons...');
 
   // Only run if GSAP is loaded
   if (typeof gsap === 'undefined') {
@@ -340,9 +335,14 @@ function initMagneticButtons() {
     return;
   }
 
-  // Target CTA buttons in hero section
-  const buttons = document.querySelectorAll('#hero button, #hero a[href*="resume"]');
+  // Target ALL buttons throughout the site (but skip navbar buttons if needed)
+  const buttons = document.querySelectorAll('main button, main a[href*="resume"], main a[role="button"]');
   console.log(`Found ${buttons.length} buttons to enhance`);
+
+  if (buttons.length === 0) {
+    console.warn('No buttons found in main content');
+    return;
+  }
 
   buttons.forEach((btn, idx) => {
     console.log(`Attaching magnetic effect to button ${idx + 1}`);
@@ -440,7 +440,7 @@ function initMagneticButtons() {
     });
   });
 
-  console.log('Magnetic buttons initialized');
+  console.log('Magnetic buttons initialized on all buttons');
 }
 
 // ============================================================================
