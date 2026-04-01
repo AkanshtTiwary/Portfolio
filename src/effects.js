@@ -16,11 +16,8 @@ const isMobileDevice = () => window.matchMedia("(pointer: coarse)").matches;
 // ============================================================================
 function initCursorSystem() {
   if (isMobileDevice()) {
-    console.log('Mobile device detected - cursor effects disabled');
     return;
   }
-
-  console.log('Initializing cursor system...');
 
   // Create style tag for cursor
   const styleTag = document.createElement('style');
@@ -130,8 +127,6 @@ function initCursorSystem() {
       particle.remove();
     }, 600);
   }
-
-  console.log('Cursor system initialized');
 }
 
 // ============================================================================
@@ -140,14 +135,10 @@ function initCursorSystem() {
 function initMagneticHeading() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing magnetic heading on all headings...');
-
   // Find ALL headings throughout the page (but skip navbar, footer, etc.)
   const headings = document.querySelectorAll('main h1, main h2, main h3, main h4, main h5, main h6');
-  console.log(`Found ${headings.length} headings to enhance`);
 
   if (headings.length === 0) {
-    console.warn('No headings found in main content');
     return;
   }
 
@@ -176,8 +167,6 @@ function initMagneticHeading() {
 
     heading.innerHTML = charSpans;
     const charElements = heading.querySelectorAll('.char');
-
-    console.log(`Heading ${headingIdx + 1}: Split into ${charElements.length} characters`);
 
     // Add mousemove listener for this specific heading
     document.addEventListener('mousemove', () => {
@@ -224,8 +213,6 @@ function initMagneticHeading() {
       });
     });
   });
-
-  console.log('Magnetic heading initialized on all headings');
 }
 
 // ============================================================================
@@ -234,14 +221,10 @@ function initMagneticHeading() {
 function initWaveSubtitle() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing wave effect on all paragraphs...');
-
   // Find ALL paragraphs in main content
   const paragraphs = document.querySelectorAll('main p');
-  console.log(`Found ${paragraphs.length} paragraphs to enhance`);
 
   if (paragraphs.length === 0) {
-    console.warn('No paragraphs found in main content');
     return;
   }
 
@@ -274,7 +257,6 @@ function initWaveSubtitle() {
       .join('');
 
     const charElements = para.querySelectorAll('.char');
-    console.log(`Paragraph ${paraIdx + 1}: Split into ${charElements.length} characters`);
 
     function updateWave() {
       charElements.forEach((char, index) => {
@@ -317,8 +299,6 @@ function initWaveSubtitle() {
 
     updateWave();
   });
-
-  console.log('Wave effect initialized on all paragraphs');
 }
 
 // ============================================================================
@@ -327,25 +307,19 @@ function initWaveSubtitle() {
 function initMagneticButtons() {
   if (isMobileDevice()) return;
 
-  console.log('Initializing magnetic buttons on all buttons...');
-
   // Only run if GSAP is loaded
   if (typeof gsap === 'undefined') {
-    console.warn('GSAP not loaded - magnetic buttons disabled');
     return;
   }
 
   // Target ALL buttons throughout the site (but skip navbar buttons if needed)
   const buttons = document.querySelectorAll('main button, main a[href*="resume"], main a[role="button"]');
-  console.log(`Found ${buttons.length} buttons to enhance`);
 
   if (buttons.length === 0) {
-    console.warn('No buttons found in main content');
     return;
   }
 
   buttons.forEach((btn, idx) => {
-    console.log(`Attaching magnetic effect to button ${idx + 1}`);
 
     // Create inner span for text if not already present
     if (!btn.querySelector('.btn-text')) {
@@ -439,8 +413,6 @@ function initMagneticButtons() {
       );
     });
   });
-
-  console.log('Magnetic buttons initialized on all buttons');
 }
 
 // ============================================================================
@@ -458,7 +430,6 @@ function waitForElement(selector, maxWait = 5000) {
       }
       
       if (Date.now() - startTime > maxWait) {
-        console.warn(`Element "${selector}" not found after ${maxWait}ms`);
         resolve(null);
         return;
       }
@@ -477,11 +448,8 @@ function initEffects() {
   // Wait for the hero section to be rendered by React
   waitForElement('#hero').then((heroSection) => {
     if (!heroSection) {
-      console.error('Hero section not found - effects disabled');
       return;
     }
-    
-    console.log('Hero section found, initializing effects...');
     
     // Small delay to ensure all rendering is complete
     setTimeout(() => {
@@ -489,7 +457,6 @@ function initEffects() {
       initMagneticHeading();
       initWaveSubtitle();
       initMagneticButtons();
-      console.log('Effects initialized successfully');
     }, 100);
   });
 }
