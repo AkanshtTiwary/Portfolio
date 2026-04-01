@@ -1,0 +1,62 @@
+/* ============================================================================
+ * CURSOR + EFFECTS STYLING
+ * Minimal CSS - only cursor dots and particles
+ * ============================================================================ */
+
+/* Custom Cursor Dot (center dot) */
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #E10600;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.8);
+}
+
+/* Custom Cursor Ring (outer ring) */
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #E10600;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 12px rgba(225, 6, 0, 0.4);
+}
+
+/* Particle trailing dots */
+.cursor-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background-color: #E10600;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  animation: fadeOutParticle 0.6s ease-out forwards;
+  box-shadow: 0 0 4px rgba(225, 6, 0, 0.6);
+}
+
+@keyframes fadeOutParticle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* Character spans for magnetic effects - smooth transitions */
+.char {
+  display: inline-block;
+  transition: transform 0.1s ease-out, color 0.2s ease-out;
+}

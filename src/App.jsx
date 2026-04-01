@@ -7,6 +7,7 @@ import Loader from './components/layout/Loader';
 import Home from './pages/Home';
 import './styles/globals.css';
 import './styles/animations.css';
+import './styles/effects-cursor.css';
 
 /**
  * Main App Component
